@@ -1,0 +1,15 @@
+accelerate launch --main_process_port=33333 ./src/f5_tts/train/finetune_dpo.py \
+    --exp_name F5TTS_Base \
+    --dataset_name flow_dpo3 \
+    --batch_size_per_gpu 4 \
+    --max_samples 32 \
+    --finetune \
+    --epochs 500 \
+    --learning_rate 1e-7 \
+    --logger 'tensorboard' \
+    --grad_accumulation_steps 2 \
+    --num_warmup_updates 0 \
+    --save_per_updates 10 \
+    --pretrain ./ckpts/F5TTS_Base/model_1200000.pt \
+    --tokenizer pinyin \
+    --batch_size_type sample

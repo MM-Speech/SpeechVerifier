@@ -1,0 +1,14 @@
+accelerate launch --mixed_precision=fp16 --main_process_port=25566 /home/limingze/F5-TTS/src/f5_tts/train/finetune_dpo.py \
+    --exp_name F5TTS_Base \
+    --dataset_name flow_dpo \
+    --batch_size_per_gpu 2 \
+    --max_samples 32 \
+    --finetune \
+    --epochs 10 \
+    --learning_rate 8e-6 \
+    --logger 'tensorboard' \
+    --grad_accumulation_steps 128 \
+    --num_warmup_updates 0 \
+    --save_per_updates 10 \
+    --pretrain /home/limingze/F5-TTS/ckpts/F5TTS_Base/model_1200000.pt \
+    --tokenizer pinyin
