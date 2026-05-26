@@ -1,0 +1,7 @@
+{
+    "1": {
+        "pred": "The speech translates to: 'There are five business entrusted stations managed by Changyuan Station.'",
+        "gt": "The business entrusting station managed by the five Chuanyuan stations.",
+        "bleu": 6.256118460580956
+    }
+}
